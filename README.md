@@ -1,5 +1,5 @@
 # Tensorflow-data-loader
-Reading data into tensorflow using tf.data function
+Reading data into tensorflow using tf.data function with batch, epoch configurations and three augmentaion methods.
 
 # Example of usage and testing
 ```
@@ -7,12 +7,12 @@ import matplotlib.pyplot as plt
 import tensorflow as tf
 import data_loader
 
-data_list = '/media/lok/dataset/lok/project/Enhanceenet/list/trains2.txt'
+data_list = '/list/example.txt'
 plt.ioff()
 
-Parse the images and masks, and return the data in batches, augmented optionally
+#Parse the images and masks, and return the data in batches, augmented optionally
 data, init_op = data_loader.data_batch(data_list, augment=['flip_ud','flip_lr','rot90'], normalize=True,batch_size=20, epoch = None)
-Get the image and mask op from the returned dataset
+#Get the image and mask op from the returned dataset
 image_tensor, mask_tensor = data
 
 with tf.Session() as sess:
@@ -31,3 +31,4 @@ with tf.Session() as sess:
 ```
 
 # Reference
+[HasnainRaz/Tensorflow-input-pipeline](https://github.com/HasnainRaz/Tensorflow-input-pipeline)
