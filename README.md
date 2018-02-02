@@ -11,13 +11,12 @@ data_list = '/list/example.txt'
 plt.ioff()
 
 #Parse the images and masks, and return the data in batches, augmented optionally
-data, init_op = data_loader.data_batch(data_list, augment=['flip_ud','flip_lr','rot90'], 
+data = data_loader.data_batch(data_list, augment=['flip_ud','flip_lr','rot90'], 
                                         normalize=True,batch_size=20, epoch = None)
 #Get the image and mask op from the returned dataset
 image_tensor, mask_tensor = data
 
 with tf.Session() as sess:
-    sess.run(init_op)
     # Evaluate the tensors
     for i in range(1):
         image, mask = sess.run([image_tensor, mask_tensor])
