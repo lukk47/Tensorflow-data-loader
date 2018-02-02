@@ -124,12 +124,9 @@ def data_batch(data_list, augment=None, normalize=False,batch_size=1, epoch = No
     data = data.repeat(epoch)
 
     # Create iterator
-    iterator = tf.data.Iterator.from_structure(data.output_types, data.output_shapes)
+    iterator = data.make_one_shot_iterator()
 
     # Next element Op
     next_element = iterator.get_next()
-
-    # Data set init. op
-    init_op = iterator.make_initializer(data)
 
     return next_element, init_op
