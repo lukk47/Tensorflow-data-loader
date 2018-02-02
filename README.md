@@ -1,5 +1,5 @@
 # Tensorflow-data-loader
-Reading data into tensorflow using tf.data function with batch, epoch configurations and three augmentaion methods.
+Reading data into tensorflow using tf.data function with configurations inclduing normalization, batch, epoch and three data augmentaion methods.
 
 # Example of usage and testing
 ```
