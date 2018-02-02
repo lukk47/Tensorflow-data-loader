@@ -2,7 +2,7 @@
 Reading data into tensorflow using tf.data function
 
 # Example of usage and testing
-'''
+```
 import matplotlib.pyplot as plt
 import tensorflow as tf
 import data_loader
@@ -28,6 +28,6 @@ with tf.Session() as sess:
         plt.imshow(mask[0, :, :,:])
         plt.show()
     # Do whatever you want now, like creating a feed dict and train your models
-'''
+```
 
 # Reference
