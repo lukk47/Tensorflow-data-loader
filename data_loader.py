@@ -124,9 +124,10 @@ def data_batch(data_list, augment=None, normalize=False,batch_size=1, epoch = No
     data = data.repeat(epoch)
 
     # Create iterator
-    iterator = data.make_one_shot_iterator()
+    iterator = data.make_initializable_iterator()
 
     # Next element Op
     next_element = iterator.get_next()
+    
 
-    return next_element, init_op
+    return next_element, iterator.initializer()
